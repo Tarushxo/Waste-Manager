@@ -1,6 +1,7 @@
+// metadata.tsx
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Waste Manager",
-    description:"Ai Powered Waste Management System",
+  title: "Waste Manager",
+  description: "AI Powered Waste Management System",
 };

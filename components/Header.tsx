@@ -69,7 +69,6 @@ export default function Header({ onMenuClick, totalEarnings }: HeaderProps) {
               await createUser(user.email, user.name || 'Anonymous User');
             } catch (error) {
               console.error("Error creating user:", error);
-              // Handle the error appropriately, maybe show a message to the user
             }
           }
         }
@@ -96,7 +95,6 @@ export default function Header({ onMenuClick, totalEarnings }: HeaderProps) {
 
     fetchNotifications();
 
-    // Set up periodic checking for new notifications
     const notificationInterval = setInterval(fetchNotifications, 30000); 
 
     return () => clearInterval(notificationInterval);
@@ -115,7 +113,6 @@ export default function Header({ onMenuClick, totalEarnings }: HeaderProps) {
 
     fetchUserBalance();
 
-    // Add an event listener for balance updates
     const handleBalanceUpdate = (event: CustomEvent) => {
       setBalance(event.detail);
     };
@@ -144,7 +141,6 @@ export default function Header({ onMenuClick, totalEarnings }: HeaderProps) {
           await createUser(user.email, user.name || 'Anonymous User');
         } catch (error) {
           console.error("Error creating user:", error);
-          // Handle the error appropriately, maybe show a message to the user
         }
       }
     } catch (error) {

@@ -26,16 +26,14 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system">
           <div className={`${inter.className} min-h-screen bg-gray-100 dark:bg-[#121212]`}>
             <Toaster />
-            <div className="flex items-center px-4 py-2 w-full">
-              {/* Header on the left, search bar moves to the right with ml-auto */}
+            <div className="flex items-center w-full">
               <div className="flex-1">
                 <Header onMenuClick={() => setSidebarOpen(!sidebarOpen)} totalEarnings={totalEarnings} />
               </div>
-              {/* ThemeToggle on the far right */}
               <ThemeToggle />
             </div>
             <div className="flex flex-1">
-              <Sidebar />
+              <Sidebar open={sidebarOpen}/>
               <main className="flex-1 p-4 lg:p-8 ml-0 lg:ml-64 transition-all duration-300">
                 Children
               </main>

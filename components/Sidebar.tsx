@@ -19,7 +19,7 @@ export default function Sidebar({open}:sideBarProps) {
     const pathName = usePathname()
 
   return (
-    <aside className={`bg-white border-r pt-20 border-gray-200 text-gray-800 dark:bg-[#151515] dark:border-[#121212] dark:text-slate-100 w-64 fixed inset-y-0 left-0 z-30 transform transition-transform duration-300 ease-in-out ${open ? "translate-x-0" : "-translate-x-full"} `}>
+    <aside className={`bg-white border-r pt-20 border-gray-200 text-gray-800 dark:bg-[#181818] dark:border-[#121212] dark:text-slate-100 w-64 fixed inset-y-0 left-0 z-30 transform transition-transform duration-300 ease-in-out ${open ? "translate-x-0" : "-translate-x-full"} `}>
         <nav className="h-full flex flex-col justify-between">
             <div className="px-4 py-6 space-y-8">
             {sideBarItems.map((item) => (

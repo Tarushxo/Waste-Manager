@@ -26,16 +26,16 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system">
           <div className={`${inter.className} min-h-screen bg-gray-100 dark:bg-[#121212]`}>
             <Toaster />
-            <div className="flex items-center w-full">
+            <div className="flex items-center w-full bg-white dark:bg-[#181818]">
               <div className="flex-1">
                 <Header onMenuClick={() => setSidebarOpen(!sidebarOpen)} totalEarnings={totalEarnings} />
               </div>
-              <ThemeToggle />
+              <ThemeToggle/>  
             </div>
             <div className="flex flex-1">
               <Sidebar open={sidebarOpen}/>
               <main className="flex-1 p-4 lg:p-8 ml-0 lg:ml-64 transition-all duration-300">
-                Children
+                {children}
               </main>
             </div>
           </div>

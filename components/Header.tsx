@@ -13,7 +13,7 @@ import { EthereumPrivateKeyProvider } from "@web3auth/ethereum-provider"
 import { createUser, getUnreadNotifications, markNotificationAsRead, getUserByEmail, getUserBalance } from "@/utils/db/actions"
 import { useMediaquery } from "@/hooks/useMediaquery"
 
-const clientId = "BM1FT32i1tqQ3mNu_RYRxhOUG59pqrh8RIZaqqoCQ8c5wb9QWFxADl6aJN8nZcZj2eYgNOTSnsrbnWbwNG6I3g8";
+const clientId = process.env.NEXT_PUBLIC_WEB3_AUTH_CLIENT_ID;
 
 const chainConfig = {
   chainNamespace: CHAIN_NAMESPACES.EIP155,
@@ -191,7 +191,7 @@ export default function Header({ onMenuClick, totalEarnings }: HeaderProps) {
   }
 
   return (
-    <header className='bg-gray-100 dark:bg-[#121212] border-gray-200 dark:border-[#202020] sticky top-0 z-50 '>
+    <header className='bg-white dark:bg-[#181818] border-gray-200 dark:border-[#202020] sticky top-0 z-50 '>
       <div className="flex items-center justify-between px-4 py-2">
         <div className="flex items-center">
           <Button variant="ghost" size="icon" className="mr-2 md:mr-4" onClick={onMenuClick}>
@@ -199,8 +199,8 @@ export default function Header({ onMenuClick, totalEarnings }: HeaderProps) {
           </Button>
           <Link href="/" className="flex items-center">
             <Trees className="h-10 w-10 md:h-15 md:w-15 text-green-500 mr-1 md:mr-2"/>
-            <span className="font-bold text-xl md:text-lg text-gray-800 dark:text-slate-50">
-              Waste Manager By Tarush 
+            <span className="font-bold text-xl md:text-lg text-gray-800 dark:text-slate-100">
+              Waste Manager <span className="text-green-500">By Tarush</span>
             </span>
           </Link>
         </div>
@@ -248,7 +248,7 @@ export default function Header({ onMenuClick, totalEarnings }: HeaderProps) {
               )}
           </DropdownMenuContent>
         </DropdownMenu>
-        <div className="mr-2 md:mr-2 flex items-center bg-gray-100 dark:bg-[#202020] rounded-full px-2 md:px-3 py-1">
+        <div className="mr-2 md:mr-2 flex items-center bg-gray-100 dark:bg-[#151515] rounded-full px-2 md:px-3 py-1">
             <Coins className="h-4 w-4 md:h-5 md:w-5 mr-2 text-green-500 "/>
             <span className="font-semibold text-sm md:text-base text-gray-800 dark:text-slate-100">
               {balance.toFixed(2)}
